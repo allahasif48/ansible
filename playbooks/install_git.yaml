@@ -5,4 +5,4 @@
     - name: Install Git
       apt:
         name: git
-        state: absent
+        state: present
