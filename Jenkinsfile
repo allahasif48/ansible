@@ -10,10 +10,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/allahasif48/ansible.git'
             }
         }
-        stage('git install on remote EC2') {
+        stage('Git Install on Remote EC2') {
             steps {
-                ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, inventory: "inventory/hosts.ini" , playbook: "playbooks/install_git.yaml"
-            
+                ansiblePlaybook credentialsId: 'ubuntu', 
+                                disableHostKeyChecking: true, 
+                                inventory: "inventory/hosts.ini", 
+                                playbook: "playbooks/install_git.yaml"
             }
         }
-    }
+    } 
+} 
+
